@@ -81,3 +81,14 @@ auto init = []() {
     return 0;
 }();
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+problem link : https://leetcode.com/problems/minimum-number-of-changes-to-make-binary-string-beautiful
+solution: 
+function minChanges(s: string): number {
+    let result = 0
+
+    for (let i = 0; i < s.length; i += 2) {
+        result += +(s[i] !== s[i + 1])
+    }
+
+    return result
+};
