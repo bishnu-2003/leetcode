@@ -11,3 +11,26 @@ solution :
         do: (_ -> true)
   end
 end
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+problem link: https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence
+solution : class Solution {
+public:
+    int isPrefixOfWord(string sentence, string searchWord) {
+
+        istringstream stream(sentence);
+        string word;
+        int index = 1; // 1-based index
+        
+        while (stream >> word) {
+            
+            if (word.find(searchWord) == 0) {
+                return index;
+            }
+            index++;
+        }
+        
+        
+        return -1;
+    }
+};
