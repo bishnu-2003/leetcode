@@ -54,3 +54,22 @@ var addSpaces = function(s, spaces) {
         return -1;
     }
 };
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+problem link : https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments
+solution: const canMakeSubsequence = function(str1, str2) {
+let p=0
+let q=0
+
+function lessChar (char){
+if(char == 'a') return 'z'
+return String.fromCharCode(char.charCodeAt(0)-1)
+}
+
+while(p<str1.length && q<str2.length){
+    if (str1[p]==str2[q] || str1[p]== lessChar(str2[q])){
+        q++
+    }
+    p++
+}
+return q== str2.length
+};
